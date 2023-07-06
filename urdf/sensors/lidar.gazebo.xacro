@@ -27,7 +27,10 @@
             <stddev>0.03</stddev>
           </noise>
         </ray>
-        <plugin name="gazebo_ros_${sensor_link_name}_controller" filename="libgazebo_ros_laser.so">
+        <plugin name="gazebo_ros_${sensor_link_name}_controller" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+           <argument> ~/out:=${sensor_link_name} </argument>
+          </ros>
           <topicName>scan</topicName>
           <frameName>${sensor_link_name}</frameName>
         </plugin>
