@@ -5,7 +5,7 @@
        xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
        xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:arg name="lidar" default="none" />
+  <xacro:arg name="lidar" default="urg" />
   <xacro:arg name="lidar_frame" default="laser" />
   <xacro:arg name="gazebo_plugin" default="true" />
   <xacro:arg name="tf" default="true" />
@@ -98,11 +98,12 @@
   <!-- =============== Gazebo =============== -->
 
   <xacro:if value="$(arg gazebo_plugin)">
-    <gazebo>
+    <!-- <gazebo>
       <plugin name="gazebo_ros_control" filename="libgazebo_ros2_control.so">
         <robotNamespace>$(arg robot_namespace)</robotNamespace>
+        <parameters>  /home/arthike/workspaces/pimouse_start/src/raspimouse_description/config/param.yaml  </parameters>
       </plugin>
-    </gazebo>
+    </gazebo> -->
 
     <!-- Sensors -->
     <xacro:lightsensor_gazebo prefix="rf" base_rad="0"
