@@ -1,6 +1,28 @@
 controller_manager:
   ros__parameters:
-    update_rate: 500  # Hz
+    update_rate: 100  # Hz
+
+    joint_state_controller:
+      type: "joint_state_controller/JointStateController"
+      publish_rate: 50  # Hz
+    
+    joint_state_broadcaster:
+      type: "joint_state_broadcaster/JointStateBroadcaster"
+      publish_rate: 50  # Hz
+
+
+joint_trajectory_controller:
+  ros_parameters:
+    joints:
+      - left_wheel_joint
+      - right_wheel_joint
+    interface_name: position
+    command_interface: 
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
 
 differential_drive_controller:
   ros__parameters:

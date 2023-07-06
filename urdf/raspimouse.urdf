@@ -354,7 +354,6 @@
   <gazebo>
     <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
       <!-- Name of robot namespace of DiffDriveController -->
-      <robotNamespace>/</robotNamespace>
       <alwaysOn>true</alwaysOn>
       <updateRate>50</updateRate>
       <!-- Set to true to swap right and left wheels, defaults to true -->
