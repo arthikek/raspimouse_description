@@ -215,7 +215,7 @@
   </link>
   <!-- =============== Gazebo =============== -->
   <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros_control">
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
       <robotNamespace>/</robotNamespace>
     </plugin>
   </gazebo>
@@ -365,20 +365,14 @@
       <!-- Name of right joint, defaults to `right_joint` -->
       <rightJoint>right_wheel_joint</rightJoint>
       <robotBaseFrame>base_footprint</robotBaseFrame>
-      <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
       <commandTopic>cmd_vel</commandTopic>
-      <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
       <odometryTopic>odom</odometryTopic>
-      <!-- Odometry frame, defaults to `odom` -->
       <odometryFrame>odom</odometryFrame>
-      <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
       <odometrySource>world</odometrySource>
       <!-- Phisical wheel params -->
       <wheelSeparation>0.0925</wheelSeparation>
       <wheelDiameter>0.048</wheelDiameter>
-      <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
       <wheelTorque>500</wheelTorque>
-      <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
       <wheelAcceleration>0</wheelAcceleration>
       <!-- Set to true to publish /odom (nav_msgs::Odometry), defaults to true -->
       <publishTf>True</publishTf>
@@ -390,5 +384,4 @@
       <publishWheelJointState>True</publishWheelJointState>
     </plugin>
   </gazebo>
-  <raspimouse_on_gazebo/>
 </robot>
