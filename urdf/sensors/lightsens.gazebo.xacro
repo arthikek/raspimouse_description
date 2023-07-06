@@ -28,8 +28,11 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <plugin name="gazebo_ros_${prefix}_lightsensor_controller" filename="libgazebo_ros_laser.so">
+        <plugin name="gazebo_ros_${prefix}_lightsensor_controller" filename="libgazebo_ros_ray_sensor.so">
           <robotNamespace>${robot_namespace}</robotNamespace>
+          <ros>
+           <argument> ~/out:=${prefix}_lightsensor_controller </argument>
+          </ros>
           <topicName>${prefix}_scan</topicName>
           <frameName>${robotdescription_namespace}${prefix}</frameName>
         </plugin>
