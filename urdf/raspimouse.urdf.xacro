@@ -99,12 +99,8 @@
 
   <xacro:if value="$(arg gazebo_plugin)">
     <gazebo>
-      <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros2_control.so">
         <robotNamespace>$(arg robot_namespace)</robotNamespace>
-
-        
-     
-        
       </plugin>
     </gazebo>
 
@@ -143,5 +139,5 @@
       robot_namespace="$(arg diffdrive_namespace)" />
   </xacro:if>
 
-  
+  <raspimouse_on_gazebo/>
 </robot>
