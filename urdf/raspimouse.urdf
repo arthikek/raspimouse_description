@@ -22,7 +22,7 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/body/raspimouse_body.dae"/>
+        <mesh filename="file:///home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/body/raspimouse_body.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -55,7 +55,7 @@
   <link name="right_wheel">
     <visual>
       <geometry>
-        <mesh filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/wheel/raspimouse_wheel.dae"/>
+        <mesh filename="file:///home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/wheel/raspimouse_wheel.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -97,7 +97,7 @@
   <link name="left_wheel">
     <visual>
       <geometry>
-        <mesh filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/wheel/raspimouse_wheel.dae"/>
+        <mesh filename="file:///home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/wheel/raspimouse_wheel.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -128,91 +128,27 @@
     </inertial>
   </link>
   <!-- Sensors -->
-  <link name="lightsensors"/>
+  <!-- <link name="lightsensors" />
   <joint name="lightsensors_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="lightsensors"/>
+    <parent link="base_link" />
+    <child link="lightsensors" />
   </joint>
-  <joint name="rf_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.04 -0.045 0.032"/>
-    <parent link="lightsensors"/>
-    <child link="rf_lightsensor_link"/>
-  </joint>
-  <link name="rf_lightsensor_link">
-    <visual>
-      <geometry>
-        <box size="0.01 0.005 0.007"/>
-      </geometry>
-      <material name="Gray">
-        <color rgba="0.2 0.2 0.2 1"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="0.000001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
-    </inertial>
-  </link>
-  <joint name="rs_joint" type="fixed">
-    <origin rpy="0 0 -1.04" xyz="0.059 -0.01 0.032"/>
-    <parent link="lightsensors"/>
-    <child link="rs_lightsensor_link"/>
-  </joint>
-  <link name="rs_lightsensor_link">
-    <visual>
-      <geometry>
-        <box size="0.01 0.005 0.007"/>
-      </geometry>
-      <material name="Gray">
-        <color rgba="0.2 0.2 0.2 1"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="0.000001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
-    </inertial>
-  </link>
-  <joint name="ls_joint" type="fixed">
-    <origin rpy="0 0 1.04" xyz="0.059 0.01 0.032"/>
-    <parent link="lightsensors"/>
-    <child link="ls_lightsensor_link"/>
-  </joint>
-  <link name="ls_lightsensor_link">
-    <visual>
-      <geometry>
-        <box size="0.01 0.005 0.007"/>
-      </geometry>
-      <material name="Gray">
-        <color rgba="0.2 0.2 0.2 1"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="0.000001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
-    </inertial>
-  </link>
-  <joint name="lf_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.04 0.045 0.032"/>
-    <parent link="lightsensors"/>
-    <child link="lf_lightsensor_link"/>
-  </joint>
-  <link name="lf_lightsensor_link">
-    <visual>
-      <geometry>
-        <box size="0.01 0.005 0.007"/>
-      </geometry>
-      <material name="Gray">
-        <color rgba="0.2 0.2 0.2 1"/>
-      </material>
-    </visual>
-    <inertial>
-      <mass value="0.000001"/>
-      <origin xyz="0 0 0"/>
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001"/>
-    </inertial>
-  </link>
+
+  <xacro:light_sensor prefix="rf" parent="lightsensors">
+    <origin xyz="0.04 -0.045 0.032" rpy="0 0 0" />
+  </xacro:light_sensor>
+
+  <xacro:light_sensor prefix="rs" parent="lightsensors">
+    <origin xyz="0.059 -0.01 0.032" rpy="0 0 -1.04" />
+  </xacro:light_sensor>
+
+  <xacro:light_sensor prefix="ls" parent="lightsensors">
+    <origin xyz="0.059 0.01 0.032" rpy="0 0 1.04" />
+  </xacro:light_sensor>
+
+  <xacro:light_sensor prefix="lf" parent="lightsensors">
+    <origin xyz="0.04 0.045 0.032" rpy="0 0 0" />
+  </xacro:light_sensor> -->
   <joint name="urg_mount_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="base_link"/>
@@ -221,7 +157,7 @@
   <link name="urg_mount_link">
     <visual>
       <geometry>
-        <mesh filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/body/raspimouse_top_plate.dae"/>
+        <mesh filename="file:///home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/body/raspimouse_top_plate.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -244,7 +180,7 @@
   <link name="laser">
     <visual>
       <geometry>
-        <mesh filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/sensor/urg_optical_axis_center_origin.dae"/>
+        <mesh filename="file:///home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/sensor/urg_optical_axis_center_origin.dae"/>
       </geometry>
     </visual>
     <collision>
@@ -266,150 +202,23 @@
         <parameters>  /home/arthike/workspaces/pimouse_start/src/raspimouse_description/config/param.yaml  </parameters>
       </plugin>
     </gazebo> -->
-  <gazebo reference="rf_lightsensor_link">
-    <material>Gazebo/Gray</material>
-    <sensor name="rf_lightsensor" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>20</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1</samples>
-            <resolution>1</resolution>
-            <min_angle>-0.15</min_angle>
-            <max_angle>0.15</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.01</min>
-          <max>0.6</max>
-          <resolution>0.001</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_ray_sensor.so" name="gazebo_ros_rf_lightsensor_controller">
-        <robotNamespace>raspimouse_on_gazebo</robotNamespace>
-        <ros>
-          <argument> ~/out:=rf_lightsensor_controller </argument>
-        </ros>
-        <topicName>rf_scan</topicName>
-        <frameName>/rf</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <gazebo reference="rs_lightsensor_link">
-    <material>Gazebo/Gray</material>
-    <sensor name="rs_lightsensor" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>20</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1</samples>
-            <resolution>1</resolution>
-            <min_angle>-1.19</min_angle>
-            <max_angle>-0.89</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.01</min>
-          <max>0.6</max>
-          <resolution>0.001</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_ray_sensor.so" name="gazebo_ros_rs_lightsensor_controller">
-        <robotNamespace>raspimouse_on_gazebo</robotNamespace>
-        <ros>
-          <argument> ~/out:=rs_lightsensor_controller </argument>
-        </ros>
-        <topicName>rs_scan</topicName>
-        <frameName>/rs</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <gazebo reference="ls_lightsensor_link">
-    <material>Gazebo/Gray</material>
-    <sensor name="ls_lightsensor" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>20</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1</samples>
-            <resolution>1</resolution>
-            <min_angle>0.89</min_angle>
-            <max_angle>1.19</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.01</min>
-          <max>0.6</max>
-          <resolution>0.001</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_ray_sensor.so" name="gazebo_ros_ls_lightsensor_controller">
-        <robotNamespace>raspimouse_on_gazebo</robotNamespace>
-        <ros>
-          <argument> ~/out:=ls_lightsensor_controller </argument>
-        </ros>
-        <topicName>ls_scan</topicName>
-        <frameName>/ls</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <gazebo reference="lf_lightsensor_link">
-    <material>Gazebo/Gray</material>
-    <sensor name="lf_lightsensor" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>20</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1</samples>
-            <resolution>1</resolution>
-            <min_angle>-0.15</min_angle>
-            <max_angle>0.15</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.01</min>
-          <max>0.6</max>
-          <resolution>0.001</resolution>
-        </range>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_ray_sensor.so" name="gazebo_ros_lf_lightsensor_controller">
-        <robotNamespace>raspimouse_on_gazebo</robotNamespace>
-        <ros>
-          <argument> ~/out:=lf_lightsensor_controller </argument>
-        </ros>
-        <topicName>lf_scan</topicName>
-        <frameName>/lf</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
+  <!-- Sensors -->
+  <!-- <xacro:lightsensor_gazebo prefix="rf" base_rad="0"
+      rad_range="0.3" min_range="0.01" max_range="0.6"
+      robot_namespace="$(arg sensor_namespace)"
+      robotdescription_namespace="$(arg robot_namespace)" />
+    <xacro:lightsensor_gazebo prefix="rs" base_rad="-1.04"
+      rad_range="0.3" min_range="0.01" max_range="0.6"
+      robot_namespace="$(arg sensor_namespace)"
+      robotdescription_namespace="$(arg robot_namespace)" />
+    <xacro:lightsensor_gazebo prefix="ls" base_rad="1.04"
+      rad_range="0.3" min_range="0.01" max_range="0.6"
+      robot_namespace="$(arg sensor_namespace)"
+      robotdescription_namespace="$(arg robot_namespace)" />
+    <xacro:lightsensor_gazebo prefix="lf" base_rad="0"
+      rad_range="0.3" min_range="0.01" max_range="0.6"
+      robot_namespace="$(arg sensor_namespace)"
+      robotdescription_namespace="$(arg robot_namespace)" /> -->
   <gazebo reference="laser">
     <sensor name="laser_sensor" type="ray">
       <pose>0 0 0 0 0 0</pose>
@@ -437,7 +246,7 @@
       </ray>
       <plugin filename="libgazebo_ros_ray_sensor.so" name="gazebo_ros_laser_controller">
         <ros>
-          <argument> ~/out:=laser </argument>
+          <argument>--ros-args --remap ~/out:=laser</argument>
         </ros>
         <topicName>scan</topicName>
         <frameName>laser</frameName>

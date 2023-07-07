@@ -12,7 +12,7 @@
     <link name="base_link">
       <visual>
         <geometry>
-          <mesh filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/body/raspimouse_body.dae" />
+          <mesh filename="file:///home/arthike/workspaces/pimouse_start/src/raspimouse_description/meshes/dae/body/raspimouse_body.dae" />
         </geometry>
       </visual>
       <collision>

@@ -47,7 +47,7 @@
   </xacro:wheel>
 
   <!-- Sensors -->
-  <link name="lightsensors" />
+  <!-- <link name="lightsensors" />
   <joint name="lightsensors_joint" type="fixed">
     <parent link="base_link" />
     <child link="lightsensors" />
@@ -67,7 +67,7 @@
 
   <xacro:light_sensor prefix="lf" parent="lightsensors">
     <origin xyz="0.04 0.045 0.032" rpy="0 0 0" />
-  </xacro:light_sensor>
+  </xacro:light_sensor> -->
 
   <xacro:if value="${'$(arg lidar)' == 'urg'}">
     <xacro:lidar_urg_mount prefix="urg_mount" parent="base_link">
@@ -107,7 +107,7 @@
     </gazebo> -->
 
     <!-- Sensors -->
-    <xacro:lightsensor_gazebo prefix="rf" base_rad="0"
+    <!-- <xacro:lightsensor_gazebo prefix="rf" base_rad="0"
       rad_range="0.3" min_range="0.01" max_range="0.6"
       robot_namespace="$(arg sensor_namespace)"
       robotdescription_namespace="$(arg robot_namespace)" />
@@ -122,7 +122,7 @@
     <xacro:lightsensor_gazebo prefix="lf" base_rad="0"
       rad_range="0.3" min_range="0.01" max_range="0.6"
       robot_namespace="$(arg sensor_namespace)"
-      robotdescription_namespace="$(arg robot_namespace)" />
+      robotdescription_namespace="$(arg robot_namespace)" /> -->
 
     <xacro:if value="${'$(arg lidar)' == 'urg'}">
       <xacro:lidar_gazebo sensor_link_name="$(arg lidar_frame)" base_rad="0" rad_range="4.71" min_range="0.10" max_range="5.6" />

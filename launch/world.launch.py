@@ -9,25 +9,8 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
 
-    robot_name = 'raspimouse_description'
-    world_file_name = 'simple.world'
+ 
 
-    # full  path to urdf and world file
-    
-    world = os.path.join(get_package_share_directory(robot_name), 'worlds', world_file_name)
-
-    urdf = os.path.join(get_package_share_directory(robot_name), 'urdf', 'raspimouse.urdf')
-    
-    # read urdf contents because to spawn an entity in 
-    # gazebo we need to provide entire urdf as string on  command line
-
-    xml = open(urdf, 'r').read()
-
-    # double quotes need to be with escape sequence
-    xml = xml.replace('"', '\\"')
-
-    # this is argument format for spwan_entity service 
-    spwan_args = '{name: \"pimouse\", xml: \"'  +  xml + '\" }'
 
     # create and return launch description object
     return LaunchDescription([
