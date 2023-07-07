@@ -26,7 +26,7 @@
     
         <odometry_frame>odom</odometry_frame>
         <!-- Odometry source, 0 for ENCODER, 1 for WORLD, defaults to WORLD -->
-        <odometry_source>world</odometry_source>
+        <odometry_source>1</odometry_source>
 
         <!-- Phisical wheel params -->
         <wheel_separation>${wheel_separation}</wheel_separation>

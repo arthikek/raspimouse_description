@@ -11,7 +11,7 @@ def generate_launch_description():
     package_name='raspimouse_description' 
 
     robot_name = 'raspimouse_description'
-    world_file_name = 'simple.world'
+    world_file_name = 'pimouse_world.world'
 
     world = os.path.join(get_package_share_directory(robot_name), 'worlds', world_file_name)
     urdf_file_path = os.path.join(get_package_share_directory(robot_name), 'urdf', 'raspimouse.urdf')
