@@ -68,7 +68,7 @@
 
   <xacro:light_sensor prefix="lf" parent="lightsensors">
     <origin xyz="0.04 0.045 0.032" rpy="0 0 0" />
-  </xacro:light_sensor> 
+  </xacro:light_sensor>  -->
 
   <xacro:if value="${'$(arg lidar)' == 'urg'}">
     <xacro:lidar_urg_mount prefix="urg_mount" parent="base_link">
@@ -77,7 +77,7 @@
     <xacro:lidar_urg_sensor sensor_link_name="$(arg lidar_frame)" parent="urg_mount_link">
       <origin xyz="0.0 0.0 0.14060" rpy="0 0 0" />
     </xacro:lidar_urg_sensor>
-  </xacro:if> -->
+  </xacro:if>
 
   <xacro:if value="${'$(arg lidar)' == 'lds'}">
     <xacro:lidar_multi_mount prefix="lds_multi_mount" parent="base_link">
