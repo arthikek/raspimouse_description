@@ -46,13 +46,13 @@
     <axis xyz="0 0 1" />
   </xacro:wheel>
 
-<link name="lightsensors" />
+<!-- <link name="lightsensors" /> -->
   <joint name="lightsensors_joint" type="fixed">
     <parent link="base_link" />
     <child link="lightsensors" />
   </joint>
 
-  <xacro:light_sensor prefix="rf" parent="lightsensors">
+  <!-- <xacro:light_sensor prefix="rf" parent="lightsensors">
     <origin xyz="0.04 -0.045 0.032" rpy="0 0 0" />
   </xacro:light_sensor>
 
@@ -75,7 +75,7 @@
     <xacro:lidar_urg_sensor sensor_link_name="$(arg lidar_frame)" parent="urg_mount_link">
       <origin xyz="0.0 0.0 0.14060" rpy="0 0 0" />
     </xacro:lidar_urg_sensor>
-  </xacro:if>
+  </xacro:if> -->
 
   <xacro:if value="${'$(arg lidar)' == 'lds'}">
     <xacro:lidar_multi_mount prefix="lds_multi_mount" parent="base_link">
