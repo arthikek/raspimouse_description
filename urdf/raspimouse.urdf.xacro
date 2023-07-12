@@ -25,6 +25,7 @@
 <xacro:include filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/urdf/wheel/diffdrive.gazebo.xacro" />
 <xacro:include filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/urdf/sensors/lightsens.urdf.xacro" />
 <xacro:include filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/urdf/sensors/lidar.urdf.xacro" />
+<xacro:include filename="/home/arthike/workspaces/pimouse_start/src/raspimouse_description/urdf/camera/camera.urdf.xacro" />
 
 
   <!-- =============== Link & Joint =============== -->
@@ -49,7 +50,8 @@
 <!-- <link name="lightsensors" /> -->
   <joint name="lightsensors_joint" type="fixed">
     <parent link="base_link" />
-    <child link="lightsensors" />
+    <child link="camera_link" />
+    <origin xyz="0.06 0.0 0.07" rpy="0 0 0" />
   </joint>
 
   <!-- <xacro:light_sensor prefix="rf" parent="lightsensors">
